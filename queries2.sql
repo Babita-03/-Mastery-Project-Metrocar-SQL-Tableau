@@ -1,4 +1,4 @@
-`1. Funnel Analysis
+1. Funnel Analysis
   WITH visitors AS (
 SELECT DISTINCT app_download_key -- effectively a user_id
 FROM app_downloads
@@ -46,5 +46,5 @@ SELECT
   ROUND(COUNT::numeric/LAG(COUNT, 1) over ()*100,2) AS percentage,
   ROUND((1 - COUNT ::numeric/ LAG(COUNT, 1) over ())*100,2) AS drop_off
   --round((1.0 - count::numeric/lag(count, 1) over ()),2)
-FROM steps;`
+FROM steps;
 
